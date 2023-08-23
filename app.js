@@ -6,12 +6,9 @@ const cors = require('cors');
 const bodyParser = require('body-parser');
 const path = require('path');
 
-if (process.env.NODE_ENV !== 'production') {
-  require('dotenv').config();
-}
+require('dotenv').config();
 
 const db = mysql.createPool({
-  connectionLimit: 4,
   host: process.env.DB_HOST,
   user: process.env.DB_USERNAME,
   password: process.env.DB_PASSWORD,
@@ -22,12 +19,12 @@ app.use(cors());
 app.use(express.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
-//let auth = basicAuth({
-//  users: {
-//    user: 'password',
-//  },
-//});
-//app.use(auth);
+let auth = basicAuth({
+  users: {
+    user: 'password',
+  },
+});
+app.use(auth);
 
 app.get('/api/repairs/get', (req, res) => {
     const sqlSelect = "SELECT * FROM repairs";
@@ -565,11 +562,11 @@ app.delete('/api/notifications/delete/:id', (req, res) => {
   })
 });
 
-//app.get('/authenticate', auth, (req, res) => {
-//  if (req.auth.user === 'user') {
-//    res.send('user');
-//  }
-//})
+app.get('/authenticate', auth, (req, res) => {
+  if (req.auth.user === 'user') {
+    res.send('user');
+  }
+})
 
 app.use(express.static(path.join(__dirname, "build")));
 

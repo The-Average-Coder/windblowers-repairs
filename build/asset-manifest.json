@@ -1,24 +1,24 @@
 {
   "files": {
-    "main.css": "/static/css/main.6d35193e.css",
-    "main.js": "/static/js/main.91ba7cd2.js",
-    "static/media/brand.png": "/static/media/brand.37cd78b8d2081312875c.png",
-    "static/media/brand-red.png": "/static/media/brand-red.67e29e6d2d2174e5d63d.png",
-    "static/media/saxophoneIcon.png": "/static/media/saxophoneIcon.b95731435c3ceebebe19.png",
-    "static/media/logo500white.png": "/static/media/logo500white.fb356022fcdfa8d74bc7.png",
-    "static/media/oboeIcon.png": "/static/media/oboeIcon.6c02703c6634919175f6.png",
-    "static/media/bassoonIcon.png": "/static/media/bassoonIcon.675de1ec9d62e403dd50.png",
-    "static/media/clarinetIcon.png": "/static/media/clarinetIcon.aad094663b83ca6cc587.png",
-    "static/media/fluteIcon.png": "/static/media/fluteIcon.d125f717ac1df03f0c33.png",
-    "static/media/searchIcon.png": "/static/media/searchIcon.1ba7ac9406894b02da78.png",
-    "static/media/searchIconGrey.png": "/static/media/searchIconGrey.9784d145117be9cba9b1.png",
-    "static/media/backIcon.png": "/static/media/backIcon.0dc3f625c6aee76c604c.png",
-    "index.html": "/index.html",
-    "main.6d35193e.css.map": "/static/css/main.6d35193e.css.map",
-    "main.91ba7cd2.js.map": "/static/js/main.91ba7cd2.js.map"
+    "main.css": "./static/css/main.cf76a44d.css",
+    "main.js": "./static/js/main.15be9b9c.js",
+    "static/media/brand.png": "./static/media/brand.37cd78b8d2081312875c.png",
+    "static/media/brand-red.png": "./static/media/brand-red.67e29e6d2d2174e5d63d.png",
+    "static/media/saxophoneIcon.png": "./static/media/saxophoneIcon.b95731435c3ceebebe19.png",
+    "static/media/logo500white.png": "./static/media/logo500white.fb356022fcdfa8d74bc7.png",
+    "static/media/oboeIcon.png": "./static/media/oboeIcon.6c02703c6634919175f6.png",
+    "static/media/bassoonIcon.png": "./static/media/bassoonIcon.675de1ec9d62e403dd50.png",
+    "static/media/clarinetIcon.png": "./static/media/clarinetIcon.aad094663b83ca6cc587.png",
+    "static/media/fluteIcon.png": "./static/media/fluteIcon.d125f717ac1df03f0c33.png",
+    "static/media/searchIcon.png": "./static/media/searchIcon.1ba7ac9406894b02da78.png",
+    "static/media/searchIconGrey.png": "./static/media/searchIconGrey.9784d145117be9cba9b1.png",
+    "static/media/backIcon.png": "./static/media/backIcon.0dc3f625c6aee76c604c.png",
+    "index.html": "./index.html",
+    "main.cf76a44d.css.map": "./static/css/main.cf76a44d.css.map",
+    "main.15be9b9c.js.map": "./static/js/main.15be9b9c.js.map"
   },
   "entrypoints": [
-    "static/css/main.6d35193e.css",
-    "static/js/main.91ba7cd2.js"
+    "static/css/main.cf76a44d.css",
+    "static/js/main.15be9b9c.js"
   ]
 }
