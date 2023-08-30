@@ -1,0 +1,300 @@
+.customers__page {
+    position: relative;
+    top: 75px;
+    animation: 0.3s ease-out 0s 1 fadeIn;
+    height: calc(100vh - 90px);
+}
+
+.customers__mainPanel {
+    display: flex;
+    margin: 0px 10px;
+    max-width: 100%;
+    height: 100%;
+    background-color: var(--white);
+    border-radius: 6px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.01), 0 6px 20px 0 rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+}
+
+.customers__customerListPanel {
+    flex: 1;
+    flex-grow: 2;
+}
+
+.customers__newCustomerButton {
+    background-color: var(--white);
+    border: rgb(227, 227, 227) 1px solid;
+    border-radius: 8px;
+    width: 100%;
+    text-align: left;
+    padding: 8px 16px;
+    transition: 0.2s;
+}
+  
+.customers__newCustomerButton:hover {
+    background-color: rgb(245, 245, 245);
+}
+
+.customers__newCustomerButton:disabled {
+    background-color: rgb(227, 227, 227);
+}
+
+.customers__newCustomerButton:disabled p {
+    text-decoration: line-through;
+}
+  
+.customers__newCustomerButton img {
+    height: 30px;
+    float: left;
+}
+  
+.customers__newCustomerButton p {
+    float: left;
+    margin: 7px 12px;
+    font-size: 15px;
+    color: gray
+}
+
+.customers__customerSearchBar {
+    background-image: url(../images/searchIconGrey.png);
+    background-size: 24px;
+    background-position: 16px 8px;
+    background-repeat: no-repeat;
+    margin-top: 10px;
+    background-color: var(--white);
+    border: rgb(227, 227, 227) 1px solid;
+    border-radius: 6px;
+    width: calc(100% - 69px);
+    text-align: left;
+    padding: 12px 16px 12px 50px;
+    transition: 0.2s;
+    font-size: 16px;
+}
+
+.customers__customerSearchInstruction {
+    text-align: center;
+    margin-top: 40px;
+    font-size: 20px;
+}
+
+.customers__customerList {
+    padding: 20px;
+    margin-top: 80px;
+    max-width: 100%;
+    height: calc(100% - 100px);
+    overflow: auto;
+    -ms-overflow-style: auto;
+    scrollbar-width: auto;
+}
+
+.customers__customerElement {
+    display: flex;
+    gap: 10px;
+    text-decoration: none;
+    color: black;
+    font-size: 17px;
+    width: 100%;
+    padding: 14px 12px;
+    border-bottom: rgb(227, 227, 227) 1px solid;
+    transition: 0.1s;
+    box-sizing: border-box;
+}
+
+.customers__customerElement:hover {
+    padding-left: 20px;
+    margin-right: -20px;
+}
+
+.customers__customerElementTitle {
+    margin: 8px;
+    flex: 1;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+.customers__customerElementTitle span {
+    font-weight: bold;
+    margin-left: 2px;
+}
+
+.customers__customerElementTelephone {
+    flex: 1;
+    margin: 8px;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+.customers__customerElementEmail {
+    margin: 8px;
+    flex: 1;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+.customers__customerElementAddress {
+    margin: 8px;
+    flex: 1;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+.customers__customerElement button {
+    flex: 0.1;
+    border-radius: 6px;
+    padding: 10px;
+    font-size: 16px;
+    transition: 0.2s;
+}
+
+.customers__customerElement button[creatingNewCustomer='1'], .customers__customerElement button[editingCustomer='1'] {
+    display: none;
+}
+
+.customers__editCustomerButton {
+    background-color: rgb(231, 231, 231);
+    border: 1px solid rgb(138, 138, 138);
+}
+
+.customers__editCustomerButton:hover {
+    background-color: rgb(211, 211, 211);
+}
+
+.customers__deleteCustomerButton {
+    border: none;
+    background-color: var(--red);
+    color: white;
+}
+
+.customers__deleteCustomerButton:hover {
+    background-color: var(--darkRed);
+}
+
+.customers__newCustomerPanel {
+    transition: 0.3s;
+    flex: 1;
+    flex-grow: 0.00001;
+    overflow: auto;
+    background-color: rgb(231, 231, 231);
+    margin: 20px 20px 0 0;
+    border-radius: 8px;
+    height: calc(100% - 50px);
+    box-sizing: border-box;
+}
+
+.customers__newCustomerPanel[newCustomer='1'] {
+    flex-grow: 1;
+}
+
+.customers__newCustomerPanelTitle {
+    font-size: 30px;
+    margin: 14px 20px;
+    font-weight: bold;
+}
+
+.customers__newCustomerForm {
+    margin-top: 10px;
+    margin-left: 20px;
+    margin-right: 20px;
+    line-height: 40px;
+}
+
+.customers__newCustomerForm input {
+    background-color: rgb(231, 231, 231);
+    box-sizing: border-box;
+    width: 100%;
+    font-size: 14px;
+    padding: 6px;
+    border-radius: 6px;
+    border: 1px solid rgb(138, 138, 138);
+}
+
+.customers__newCustomerForm input:focus {
+    outline: none;
+}
+
+.customers__newCustomerButtons {
+    margin-top: 5px;
+    margin-bottom: 10px;
+    display: flex;
+    width: 100%;
+    gap: 10px;
+}
+
+.customers__newCustomerForm button {
+    flex: 1;
+    border-radius: 6px;
+    padding: 10px;
+    font-size: 16px;
+    transition: 0.2s;
+}
+
+.customers__cancelNewCustomer {
+    background-color: rgb(231, 231, 231);
+    border: 1px solid rgb(138, 138, 138);
+}
+
+.customers__cancelNewCustomer:hover {
+    background-color: rgb(211, 211, 211);
+}
+
+.customers__submitNewCustomer {
+    background-color: var(--red);
+    border: none;
+    color: white;
+}
+
+.customers__submitNewCustomer:hover {
+    background-color: var(--darkRed);
+}
+
+@media screen and (max-width: 1400px) {
+    .customers__newCustomerPanel[newCustomer='1'] {
+      flex-grow: 1.2;
+    }
+}
+  
+@media screen and (max-width: 1200px) {
+    .customers__newCustomerPanel[newCustomer='1'] {
+      flex-grow: 1.5;
+    }
+
+    .customers__customerElementAddress {
+        display: none;
+    }
+}
+
+@media screen and (max-width: 800px) {
+    .customers__newCustomerPanel {
+        transition: none;
+        margin-left: 20px;
+        display: none;
+    }
+    
+    .customers__newCustomerPanel[newCustomer='1'] {
+        display: block;
+    }
+    
+    .customers__customerListPanel[newCustomer='1'], .customers__customerListPanel[editingCustomer='1'] {
+        flex-grow: 0.00000001;
+        overflow: hidden;
+    }
+}
+  
+@media screen and (max-width: 650px) {
+    .customers__customerElementEmail {
+        display: none;
+    }
+
+    .customers__customerElementTelephone {
+        display: none;
+    }
+  
+    .customers__customerElement:hover {
+      padding-left: 12px;
+      margin-right: 0px;
+    }
+}

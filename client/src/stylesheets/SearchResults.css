@@ -1,0 +1,34 @@
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+body {
+  background-color: var(--lightGrey);
+}
+
+.searchresults__page {
+  position: relative;
+  top: 75px;
+  animation: 0.3s ease-out 0s 1 fadeIn;
+  height: calc(100vh - 90px);
+}
+
+.searchTitle {
+  margin: 0;
+  font-size: 30px;
+}
+
+.searchResultsBox {
+  margin: 0 10px;
+  max-width: 100%;
+  height: 100%;
+  background-color: var(--white);
+  border-radius: 6px;
+  padding: 5px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.01), 0 6px 20px 0 rgba(0, 0, 0, 0.1);
+}

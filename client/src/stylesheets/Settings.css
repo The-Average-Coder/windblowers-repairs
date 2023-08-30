@@ -1,0 +1,95 @@
+.settings__page {
+    position: relative;
+    top: 75px;
+    animation: 0.3s ease-out 0s 1 fadeIn;
+    height: calc(100vh - 90px);
+}
+
+.settings__mainPanel {
+    margin: 0px 10px;
+    max-width: 100%;
+    height: 100%;
+    background-color: var(--white);
+    border-radius: 6px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.01), 0 6px 20px 0 rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+}
+
+.settings__repairerList {    
+    padding: 20px;
+    margin-top: 80px;
+}
+
+.settings__repairerElement {
+    display: flex;
+    font-size: 17px;
+    width: 100%;
+    padding: 14px 12px;
+    border-bottom: rgb(227, 227, 227) 1px solid;
+    transition: 0.1s;
+    box-sizing: border-box;
+}
+
+.settings__repairerTitle {
+    margin: 8px;
+    flex: 1;
+    font-weight: bold;
+}
+
+.settings__newRepairerForm {
+    display: flex;
+}
+
+.settings__newRepairerInput {
+    flex: 1;
+    background-color: var(--white);
+    border: rgb(227, 227, 227) 1px solid;
+    border-radius: 6px;
+    width: calc(100% - 69px);
+    text-align: left;
+    padding: 12px 16px;
+    transition: 0.2s;
+    font-size: 16px;
+}
+
+.settings__newRepairerButton {
+    background-color: var(--white);
+    border: rgb(227, 227, 227) 1px solid;
+    border-radius: 8px;
+    text-align: left;
+    padding: 8px 16px;
+    transition: 0.2s;
+}
+  
+.settings__newRepairerButton:hover {
+    background-color: rgb(245, 245, 245);
+}
+  
+.settings__newRepairerButton img {
+    height: 30px;
+    float: left;
+}
+  
+.settings__newRepairerButton p {
+    float: left;
+    margin: 7px 12px;
+    font-size: 15px;
+    color: gray
+}
+
+.settings__changePasswordForm {
+    margin-top: 100px;
+    margin-left: 30px;
+    line-height: 50px;
+}
+
+.settings__changePasswordForm input {
+    background-color: var(--white);
+    border: rgb(227, 227, 227) 1px solid;
+    border-radius: 6px;
+    text-align: left;
+    width: 300px;
+    padding: 12px 16px;
+    transition: 0.2s;
+    font-size: 16px;
+}

@@ -1,0 +1,523 @@
+.repairs__page {
+  position: relative;
+  top: 75px;
+  animation: 0.3s ease-out 0s 1 fadeIn;
+  height: calc(100vh - 90px);
+}
+
+.repairsPanel {
+  margin: 0px 10px;
+  max-width: 100%;
+  background-color: var(--white);
+  border-radius: 6px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.01), 0 6px 20px 0 rgba(0, 0, 0, 0.1);
+  min-height: 800px;
+  height: 100%;
+}
+
+.repairsParentPanel {
+  display: flex;
+  max-width: 100%;
+  height: calc(100% - 70px);
+}
+
+.repairsPanelLayoutSelect {
+  width: 100%;
+  height: 50px;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: rgb(231, 231, 231);
+  border-top-right-radius:10px;
+  border-top-left-radius: 10px;
+}
+
+.repairsPanelLayoutSelect li {
+  margin: 0;
+  padding: 0;
+  float: left;
+  width: 50%;
+  height: 100%;
+}
+
+.repairsPanelLayoutSelect li button {
+  width: 100%;
+  display: block;
+  font-size: 17px;
+  padding: 7px 16px 8px;
+  text-align: center;
+  text-decoration: none;
+  background-color: rgb(231, 231, 231);
+  border-top-right-radius:10px;
+  border-top-left-radius: 10px;
+  border: none;
+  height: 100%;
+  transition: 0.2s;
+}
+
+.repairsPanelLayoutSelect li button:hover {
+  background-color: rgb(242, 242, 242);
+}
+
+.repairsPanelLayoutSelect li button[active='1'] {
+  background-color: white;
+}
+
+.repairsList {
+  padding: 20px 20px;
+  margin-top: 80px;
+  max-width: 100%;
+  min-height: 150px;
+  max-height: 280px;
+  overflow: auto;
+  -ms-overflow-style: auto;
+  scrollbar-width: auto;
+}
+
+.repairsList::-webkit-scrollbar {
+  display: block;
+}
+
+.repairsListTitle {
+  font-size: 30px;
+  margin: 30px 10px 0 30px;
+  font-weight: bold;
+  float: left;
+}
+
+.repairsListCount {
+  padding: 5px 14px;
+  font-size: 30px;
+  margin: 25px 10px 4px 10px;
+  border-radius: 12px;
+  border: rgb(227, 227, 227) 1px solid;
+  float: left;
+}
+
+.repairsNewTaskButton {
+  background-color: var(--white);
+  border: rgb(227, 227, 227) 1px solid;
+  border-radius: 8px;
+  width: 100%;
+  text-align: left;
+  padding: 8px 16px;
+  transition: 0.2s;
+}
+
+.repairsNewTaskButton:hover {
+  background-color: rgb(245, 245, 245);
+}
+
+.repairsNewTaskButton img {
+  height: 30px;
+  float: left;
+}
+
+.repairsNewTaskButton p {
+  float: left;
+  margin: 7px 12px;
+  font-size: 15px;
+  color: gray
+}
+
+.repairsListElement {
+  display: flex;
+  text-decoration: none;
+  color: black;
+  max-width: 100%;
+  padding: 14px 12px;
+  border-bottom: rgb(227, 227, 227) 1px solid;
+  transition: 0.1s;
+}
+
+.repairsListElement:hover {
+    margin-left: 10px;
+}
+
+.repairsListElementIcon {
+  width: 40px;
+  height: 40px;
+  float: left;
+}
+
+.repairsListElementTitle {
+  font-weight: bold;
+  font-size: 17px;
+  margin: 8px;
+  flex: 1;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.repairsListElementStatus {
+  margin: 9px;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+}
+
+.repairsListElementManufacturer {
+  font-size: 17px;
+  margin: 8px;
+  flex: 1;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.repairsListElementModel {
+  font-size: 17px;
+  margin: 8px;
+  flex: 1;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.repairsListElementSerialNumber {
+  font-size: 17px;
+  margin: 8px;
+  flex: 1;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.repairsListElementDate {
+  font-size: 17px;
+  margin: 8px;
+  flex: 2;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.repairsListElementCustomer {
+  font-size: 17px;
+  margin: 8px;
+  flex: 2;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.newTaskPanel {
+  transition: 0.3s;
+  flex: 1;
+  flex-grow: 0.00001;
+  overflow: auto;
+  background-color: rgb(231, 231, 231);
+  margin: 20px 20px 0 0;
+  border-radius: 8px;
+  box-sizing: border-box;
+}
+
+.newTaskPanelTitle {
+  font-size: 30px;
+  margin: 14px 20px;
+  font-weight: bold;
+}
+
+.newTaskPanel[newTask='1'] {
+  flex-grow: 1;
+}
+
+.taskList {
+  flex: 1;
+  flex-grow: 2;
+}
+
+.newTaskForm {
+  margin-top: 10px;
+  margin-left: 20px;
+  margin-right: 20px;
+  line-height: 40px;
+}
+
+.newTaskForm p {
+  font-weight: bold;
+  font-size: 18px;
+  padding: 4px 2px;
+  margin: 0;
+}
+
+.customerDropdown {
+  margin-bottom: 2px;
+  border-radius: 8px 8px 4px 4px;
+}
+
+.newTaskNewCustomerButton {
+  display: flex;
+}
+
+.newTaskNewCustomerButton a {
+  flex: 1;
+  padding: 0 10px;
+  border-radius: 4px 4px 6px 6px;
+}
+
+.instrumentDropdown {
+  background-color: rgb(231, 231, 231);
+  box-sizing: border-box;
+  width: 100%;
+  font-size: 14px;
+  padding: 6px;
+  border-radius: 6px;
+  border: 1px solid rgb(138, 138, 138);
+}
+
+.instrumentDropdown:focus {
+  outline: none;
+}
+
+.newTaskForm input {
+  background-color: rgb(231, 231, 231);
+  box-sizing: border-box;
+  width: 100%;
+  font-size: 14px;
+  padding: 6px;
+  border-radius: 6px;
+  border: 1px solid rgb(138, 138, 138);
+}
+
+.notesInput {
+  background-color: rgb(231, 231, 231);
+  margin-top: 5px;
+  box-sizing: border-box;
+  width: 100%;
+  font-size: 16px;
+  padding: 6px;
+  border-radius: 6px;
+  border: 1px solid rgb(138, 138, 138);
+  font-family: inherit;
+  resize: none;
+}
+
+.notesInput:focus {
+  outline: none;
+}
+
+.newTaskForm input:focus {
+  outline: none;
+}
+
+.cancelNewTask {
+  background-color: rgb(231, 231, 231);
+  border: 1px solid rgb(138, 138, 138);
+}
+
+.submitNewTask {
+  background-color: var(--red);
+  border: none;
+  color: white;
+}
+
+.submitNewTask:hover {
+  background-color: var(--darkRed);
+}
+
+.cancelNewTask:hover {
+  background-color: rgb(211, 211, 211);
+}
+
+.newTaskButtons {
+  display: flex;
+  width: 100%;
+  gap: 10px;
+  margin-bottom: 10px;
+}
+
+.newTaskForm button {
+  flex: 1;
+  border-radius: 6px;
+  padding: 10px;
+  font-size: 16px;
+  transition: 0.2s;
+}
+
+.calendarPanel {
+  padding: 30px 20px;
+  display: flex;
+}
+
+.calendarContainer {
+  flex: 14;
+}
+
+.calendarSidebar {
+  flex-grow: 0.00001;
+  background-color: rgb(231, 231, 231);
+  margin-left: 20px;
+  border-radius: 6px;
+  padding: 5px;
+  display: flex;
+}
+
+.calendarSidebar[allocateCalendar='1'] {
+  flex-grow: 1;
+}
+
+.calendarSidebarToggle {
+  background-color: inherit;
+  border: none;
+  border-radius: 10px;
+  padding: 6px 8px 4px 6px;
+  height: 44px;
+}
+
+.calendarSidebarToggle:hover {
+  background-color: rgb(180, 180, 180);
+}
+
+.calendarSidebarToggle img {
+  width: 30px;
+}
+
+.calendarSidebarPanel {
+  flex: 1;
+}
+
+.calendarSidebarTitle {
+  text-align: center;
+  font-weight: bold;
+  font-size: 20px;
+  margin-top: 12px;
+}
+
+.calendarSidebarUnallocatedTaskList {
+  padding: 0px 10px;
+  overflow: auto;
+  max-height: 300px;
+}
+
+.calendarSidebarUnallocatedTask {
+  border: 1px solid rgb(138, 138, 138);
+  padding: 4px 10px;
+  margin: 10px 0;
+  border-radius: 10px;
+  display: flex;
+}
+
+.calendarSidebarUnallocatedTask:hover {
+  background-color:rgb(138, 138, 138);
+}
+
+.calendarSidebarUnallocatedTask p {
+  text-align: center;
+}
+
+.unallocatedJobNumber {
+  font-weight: bold;
+  flex: 10;
+  letter-spacing: 1px;
+}
+
+.unallocatedSurname {
+  flex: 4;
+}
+
+.unallocatedInstrument {
+  flex: 6;
+}
+
+.unallocatedDeadline {
+  flex: 6;
+}
+
+.unallocatedTime {
+  flex: 10;
+}
+
+.calendarSidebarSelectionInstruction {
+  margin-top: 44px;
+  text-align: center;
+  padding: 0 140px;
+}
+
+.calendarSidebarTimeToAllocateConatainer {
+  text-align: center;
+  margin-top: 50px;
+}
+
+.calendarSidebarTimeHours, .calendarSidebarTimeMinutes {
+  margin-left: 10px;
+  border-radius: 6px;
+  padding: 6px 10px;
+  font-size: 16px;
+  border: 1px solid rgb(138, 138, 138);
+  color: black;
+}
+
+.calendarSidebarTimeHours:focus, .calendarSidebarTimeMinutes:focus {
+  outline: none;
+}
+
+.calendarSidebarExternalEvents {
+  width: 200px;
+  margin-top: 100px;
+  position: relative;
+  left: 50%;
+  -ms-transform: translateX(-50%);
+  transform: translateX(-50%);
+}
+
+.fc {
+  height: 766px;
+}
+
+.fc .fc-scrollgrid-liquid {
+  height: 700px;
+}
+
+.calendarTotalTime {
+  display: inline;
+  padding: 2px 8px;
+  margin-right: 10px;
+  border: 1px solid black;
+  border-radius: 6px;
+}
+
+@media screen and (max-width: 1400px) {
+  .newTaskPanel[newTask='1'] {
+    flex-grow: 1.2;
+  }
+}
+
+@media screen and (max-width: 1200px) {
+  .newTaskPanel[newTask='1'] {
+    flex-grow: 1.5;
+  }
+
+  .repairsListElementSerialNumber {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 1000px) {
+  .repairsListElementCustomer {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 800px) {
+  .newTaskPanel {
+    transition: none;
+    margin-left: 20px;
+    display: none;
+  }
+
+  .newTaskPanel[newTask='1'] {
+    display: block;
+  }
+  
+  .taskList[newTask='1'] {
+    flex-grow: 0.00000001;
+    overflow: hidden;
+  }
+  
+  .repairsListElement:hover {
+    margin-left: 0px;
+  }
+}
