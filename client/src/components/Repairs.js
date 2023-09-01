@@ -48,7 +48,7 @@ function Repairs(props) {
   const navigate = useNavigate();
 
   const instrumentSymbol = { 
-    'concert flute': fluteIcon,
+    'flute': fluteIcon,
     'piccolo': fluteIcon,
     'alto flute': fluteIcon,
     'bass flute': fluteIcon,
@@ -523,7 +523,7 @@ function Repairs(props) {
               <select className="instrumentDropdown" value={repairInstrument} onChange={(e) => {setRepairInstrument(e.target.value)}} maximumScale={1} required>
                 <option value="" selected disabled hidden>Select Instrument</option>
                 <optgroup label='Flute Family'>
-                  <option value="concert flute">Concert Flute</option>
+                  <option value="flute">Flute</option>
                   <option value="piccolo">Piccolo</option> 
                   <option value="alto flute">Alto Flute</option> 
                   <option value="bass flute">Bass Flute</option> 
