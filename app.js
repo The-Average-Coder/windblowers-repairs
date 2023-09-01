@@ -310,6 +310,24 @@ app.put('/api/repairs/updateTimer', (req, res) => {
   }
 });
 
+app.get('/api/repairs/getUnallocatedTime/:id', (req, res) => {
+  if (req.signedCookies.name === 'user') {
+    const repairId = req.params.id;
+
+    const sqlSelect = 'SELECT unallocated_time_calendar FROM repairs WHERE id = ?'
+    db.query(sqlSelect, [repairId], (err, result) => {
+      if (!err) {
+        res.send(result);
+      }
+      else {
+        console.log(err);
+      }
+    })
+  } else {
+    res.end();
+  }
+})
+
 app.put('/api/repairs/updateUnallocatedTime', (req, res) => {
   if (req.signedCookies.name === 'user') {
     const repairId = req.body.repairId;

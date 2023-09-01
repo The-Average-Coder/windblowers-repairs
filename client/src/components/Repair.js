@@ -444,15 +444,22 @@ function Repair() {
     }
 
     const updateJobAssessment = () => {
-        Axios.put('/api/repairs/updateAssessment', { 
-            repairId: repairId, 
-            repairUpdatedExpectedTime: repairUpdatedExpectedTime, 
-            repairUpdatedCostForTime: repairUpdatedCostForTime,
-            repairUpdatedCostOfMaterialsForUs: repairUpdatedCostOfMaterialsForUs,
-            repairUpdatedCostOfMaterialsForCustomer: repairCostOfMaterialsForCustomer
-        });
         setRepairHasBeenUpdated(true);
         setUpdateAssessmentMode(false);
+        Axios.get(`/api/repairs/getJob/${repairId}`).then((response) => {
+            const newRepairUnallocatedTime = response.data[0].unallocated_time_calendar + (!!response.data[0].has_been_updated ? repairUpdatedExpectedTime - response.data[0].updated_expected_time : repairUpdatedExpectedTime - response.data[0].expected_time);
+            
+            Axios.put('/api/repairs/updateUnallocatedTime', { repairId: repairId, repairUnallocatedTime: newRepairUnallocatedTime })
+            
+        
+            Axios.put('/api/repairs/updateAssessment', { 
+                repairId: repairId, 
+                repairUpdatedExpectedTime: repairUpdatedExpectedTime, 
+                repairUpdatedCostForTime: repairUpdatedCostForTime,
+                repairUpdatedCostOfMaterialsForUs: repairUpdatedCostOfMaterialsForUs,
+                repairUpdatedCostOfMaterialsForCustomer: repairCostOfMaterialsForCustomer
+            });
+        })
     }
 
     const startTimer = () => {
@@ -500,6 +507,14 @@ function Repair() {
             Axios.put('/api/calendarEvents/updateColor', { repairId: repairId, eventColor: 'gray' })
         });
         sendNotification('Job Complete And Ready To Be Collected');
+    }
+
+    const unFinishJob = () => {
+        Axios.put('/api/repairs/updateStatus', { repairId: repairId, repairStatus: 'open' }).then((response) => {
+            setRepairStatus('open');
+            cancelRequestFinishJob();
+            Axios.put('/api/calendarEvents/updateColor', { repairId: repairId, eventColor: 'orange' })
+        });
     }
 
     const instrumentCollected = () => {
@@ -889,7 +904,8 @@ function Repair() {
                     <p>Updated Materials Cost For Customer: £{repairUpdatedCostOfMaterialsForCustomer}</p>
                 </> : null }
                 {repairStatus === 'complete' ? <>
-                    <button className='normalButton' onClick={instrumentCollected}>Instrument Has Been Collected</button>
+                    <button className='normalButton' onClick={instrumentCollected}>Instrument Has Been Collected</button><br />
+                    <button className='normalButton' onClick={unFinishJob}>Re-Open Job</button>
                 </> : <>
                     <p style={{fontSize: '18px'}}>Date Collected: {repairDateCollected.slice(8, 10)}-{repairDateCollected.slice(5, 7)}-{repairDateCollected.slice(0, 4)}</p>
                 </> } 

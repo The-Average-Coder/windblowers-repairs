@@ -482,8 +482,8 @@ function Repairs(props) {
                   <p className='repairsListElementManufacturer'>{val.manufacturer}</p>
                   <p className='repairsListElementModel'>{val.model}</p>
                   <p className='repairsListElementSerialNumber'>{val.job_number}</p>
-                  <p className='repairsListElementDate'>Date Created: {val.date_created.slice(0, 10)}</p>
-                  <p className='repairsListElementDate'>Deadline: {val.deadline === null ? 'Not Set' : val.deadline.slice(0, 10)}</p>
+                  <p className='repairsListElementDate'>Date Created: {val.date_created === undefined ? 'Error' : val.date_created.slice(0, 10)}</p>
+                  <p className='repairsListElementDate'>Deadline: {val.deadline === undefined || val.deadline === null ? 'Not Set' : val.deadline.slice(0, 10)}</p>
                   <p className='repairsListElementCustomer'>{getCustomerName(val.customer_id)}</p>
                 </Link>
               ];
@@ -504,8 +504,8 @@ function Repairs(props) {
                   <p className='repairsListElementManufacturer'>{val.manufacturer}</p>
                   <p className='repairsListElementModel'>{val.model}</p>
                   <p className='repairsListElementSerialNumber'>{val.job_number}</p>
-                  <p className='repairsListElementDate'>Date Created: {val.date_created.slice(0, 10)}</p>
-                  <p className='repairsListElementDate'>Deadline: {val.deadline === null ? 'Not Set' : val.deadline.slice(0, 10)}</p>
+                  <p className='repairsListElementDate'>Date Created: {val.date_created === undefined ? 'Error' : val.date_created.slice(0, 10)}</p>
+                  <p className='repairsListElementDate'>Deadline: {val.deadline === undefined || val.deadline === null ? 'Not Set' : val.deadline.slice(0, 10)}</p>
                   <p className='repairsListElementCustomer'>{getCustomerName(val.customer_id)}</p>
                 </Link>
               ];
