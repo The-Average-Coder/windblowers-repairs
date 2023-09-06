@@ -16,7 +16,7 @@ function SearchResults() {
     const [filteredCustomerList, setFilteredCustomerList] = useState([]);
 
     const instrumentSymbol = { 
-        'concert flute': fluteIcon,
+        'flute': fluteIcon,
         'piccolo': fluteIcon,
         'alto flute': fluteIcon,
         'bass flute': fluteIcon,

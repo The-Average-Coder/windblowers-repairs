@@ -903,6 +903,8 @@ function Repair() {
                     <p>Updated Materials Cost For Us: £{repairUpdatedCostOfMaterialsForUs}</p>
                     <p>Updated Materials Cost For Customer: £{repairUpdatedCostOfMaterialsForCustomer}</p>
                 </> : null }
+                <p>Notes:</p>
+                <p>{repairOpenJobNotes}</p>
                 {repairStatus === 'complete' ? <>
                     <button className='normalButton' onClick={instrumentCollected}>Instrument Has Been Collected</button><br />
                     <button className='normalButton' onClick={unFinishJob}>Re-Open Job</button>
