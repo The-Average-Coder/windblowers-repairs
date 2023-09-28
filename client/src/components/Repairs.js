@@ -45,6 +45,8 @@ function Repairs(props) {
   const [timeToAllocateMinutes, setTimeToAllocateMinutes] = useState(0);
   const [calendarEventPriority, setCalendarEventPriority] = useState(0);
 
+  const [currentFilterTag, setCurrentFilterTag] = useState('');
+
   const navigate = useNavigate();
 
   const instrumentSymbol = { 
@@ -460,6 +462,14 @@ function Repairs(props) {
     </>)
   }
 
+  const filterRepairsList = (filterTag) => {
+    if (currentFilterTag === filterTag) {
+      setCurrentFilterTag('');
+      return;
+    }
+    setCurrentFilterTag(filterTag);
+  }
+
   return (<div className='repairs__page'>
     <div className='repairsPanel'>
       <ul className='repairsPanelLayoutSelect'>
@@ -473,7 +483,26 @@ function Repairs(props) {
           <p className='repairsListCount'>{repairList.filter(repair => repair.status !== 'closed' && repair.status !== 'collected').length}</p>
           <div className='repairsList'>
             <button className='repairsNewTaskButton' onClick={createNewTask}><img src={plusSymbol} alt='' /><p>Add New Task</p></button>
-            {repairList.filter(repair => repair.status === 'assessment / quote' || repair.status === 'open' || repair.status === 'complete').map((val) => {
+            <button className='repairsFilterButton' onClick={() => {filterRepairsList('assessment / quote')}} active={currentFilterTag === 'assessment / quote' ? 1 : 0}>Assessment</button>
+            <button className='repairsFilterButton' onClick={() => {filterRepairsList('open')}} active={currentFilterTag === 'open' ? 1 : 0}>Open</button>
+            <button className='repairsFilterButton' onClick={() => {filterRepairsList('complete')}} active={currentFilterTag === 'complete' ? 1 : 0}>Complete</button>
+            {currentFilterTag === '' ?
+            repairList.filter(repair => repair.status === 'assessment / quote' || repair.status === 'open' || repair.status === 'complete').map((val) => {
+              return [
+                <Link className='repairsListElement' to={`/repair/${val.id}`}>
+                  <img className='repairsListElementIcon' src={instrumentSymbol[val.instrument]} alt='' />
+                  <div className='repairsListElementStatus' style={{backgroundColor: statusColor[val.status]}} />
+                  <p className='repairsListElementTitle'>{titleCase(val.instrument)}</p>
+                  <p className='repairsListElementManufacturer'>{val.manufacturer}</p>
+                  <p className='repairsListElementModel'>{val.model}</p>
+                  <p className='repairsListElementSerialNumber'>{val.job_number}</p>
+                  <p className='repairsListElementDate'>Date Created: {val.date_created === undefined ? 'Error' : val.date_created.slice(0, 10)}</p>
+                  <p className='repairsListElementDate'>Deadline: {val.deadline === undefined || val.deadline === null ? 'Not Set' : val.deadline.slice(0, 10)}</p>
+                  <p className='repairsListElementCustomer'>{getCustomerName(val.customer_id)}</p>
+                </Link>
+              ];
+            }) : 
+            repairList.filter(repair => repair.status === currentFilterTag).map((val) => {
               return [
                 <Link className='repairsListElement' to={`/repair/${val.id}`}>
                   <img className='repairsListElementIcon' src={instrumentSymbol[val.instrument]} alt='' />
