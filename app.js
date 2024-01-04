@@ -83,10 +83,10 @@ app.get('/api/repairs/getJob/:id', (req, res) => {
 
 app.get('/api/repairs/getLastJobNumber', (req, res) => {
   if (req.signedCookies.name === 'user') {
-    const sqlSelect = 'SELECT job_number FROM repairs WHERE id=(SELECT MAX(id) FROM repairs)';
+    const sqlSelect = 'SELECT job_number FROM repairs ORDER BY job_number DESC';
     db.query(sqlSelect, (err, result) => {
       if (!err) {
-        res.send(result);
+        res.send(result[0]);
       }
       else {
         console.log(err);
@@ -131,10 +131,11 @@ app.put('/api/repairs/editDetails', (req, res) => {
     const repairModel = req.body.repairModel;
     const repairSerialNumber = req.body.repairSerialNumber;
     const repairNotes = req.body.repairNotes;
+    const repairJobNumber = req.body.repairJobNumber;
 
-    const sqlUpdate = 'UPDATE repairs SET instrument = ?, manufacturer = ?, model = ?, serial_number = ?, notes = ? WHERE id = ?';
+    const sqlUpdate = 'UPDATE repairs SET instrument = ?, manufacturer = ?, model = ?, serial_number = ?, notes = ?, job_number = ? WHERE id = ?';
 
-    db.query(sqlUpdate, [repairInstrument, repairManufacturer, repairModel, repairSerialNumber, repairNotes, repairId], (err, result) => {
+    db.query(sqlUpdate, [repairInstrument, repairManufacturer, repairModel, repairSerialNumber, repairNotes, repairJobNumber, repairId], (err, result) => {
       if (!err) {
         res.send('Success');
       }
@@ -827,7 +828,7 @@ app.get('/*', (req, res) => {
   res.sendFile(path.join(__dirname, "build", "index.html"));
 });
 
-const port = process.env.PORT || 3000;
+const port = /*process.env.PORT || */5000;
 app.listen(port, () => {
   console.log('running on port', port);
 });

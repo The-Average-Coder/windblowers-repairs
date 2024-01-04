@@ -144,7 +144,7 @@ function Repairs(props) {
         setLastJobNumber('');
       }
       else {
-        setLastJobNumber(response.data[0].job_number);
+        setLastJobNumber(response.data.job_number);
       }
     });
   }
@@ -152,7 +152,7 @@ function Repairs(props) {
   const calculateJobNumber = () => {
     const currentDate = new Date();
     const currentYear = currentDate.getFullYear().toString().slice(2);
-    const currentWeek = moment(currentDate).format('W').toString();
+    const currentWeek = moment(currentDate).format('W').toString().padStart(2, '0');
 
     const weekCode = currentYear + currentWeek;
     

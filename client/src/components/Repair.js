@@ -256,7 +256,8 @@ function Repair() {
             repairManufacturer: repairManufacturer,
             repairModel: repairModel,
             repairSerialNumber: repairSerialNumber,
-            repairNotes: repairNotes
+            repairNotes: repairNotes,
+            repairJobNumber: repairJobNumber
         }).then((response) => {
             loadRepair();
         })
@@ -583,7 +584,7 @@ function Repair() {
         <div className='repair__mainPanel'>
             {invalidJob ? <p>Job doesn't exist</p> : <>
 
-            <p className='repair__jobTitle'>Repair Number: {repairJobNumber}<span>Date Created: {repairDateCreated.slice(8, 10)}-{repairDateCreated.slice(5, 7)}-{repairDateCreated.slice(0, 4)}</span></p>
+            <p className='repair__jobTitle'>Repair Number: <input type='text' value={repairJobNumber} onChange={(e) => { setRepairJobNumber(e.target.value) }} readOnly={!editMode} style={{width: repairJobNumber.length * 16 + 10}} /><span>Date Created: {repairDateCreated.slice(8, 10)}-{repairDateCreated.slice(5, 7)}-{repairDateCreated.slice(0, 4)}</span></p>
             <button className='repair__editJobButton' type='button' onClick={toggleEditMode}>{editMode ? 'Cancel Edit' : 'Edit Details'}</button>
             <button className='repair__saveJobButton' type='button' onClick={submitRepairEdit} style={{display: editMode ? 'block' : 'none'}}>Save</button>
             <p className='repair__repairStatus' style={{backgroundColor: statusColor[repairStatus]}}>Status: {titleCase(repairStatus)}</p>

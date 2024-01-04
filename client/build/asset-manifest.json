@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "./static/css/main.9fa5f7e1.css",
-    "main.js": "./static/js/main.124f2a9c.js",
+    "main.css": "./static/css/main.dc14fbe8.css",
+    "main.js": "./static/js/main.4738834b.js",
     "static/media/brand.png": "./static/media/brand.37cd78b8d2081312875c.png",
     "static/media/brand-red.png": "./static/media/brand-red.67e29e6d2d2174e5d63d.png",
     "static/media/saxophoneIcon.png": "./static/media/saxophoneIcon.b95731435c3ceebebe19.png",
@@ -14,11 +14,11 @@
     "static/media/searchIconGrey.png": "./static/media/searchIconGrey.9784d145117be9cba9b1.png",
     "static/media/backIcon.png": "./static/media/backIcon.0dc3f625c6aee76c604c.png",
     "index.html": "./index.html",
-    "main.9fa5f7e1.css.map": "./static/css/main.9fa5f7e1.css.map",
-    "main.124f2a9c.js.map": "./static/js/main.124f2a9c.js.map"
+    "main.dc14fbe8.css.map": "./static/css/main.dc14fbe8.css.map",
+    "main.4738834b.js.map": "./static/js/main.4738834b.js.map"
   },
   "entrypoints": [
-    "static/css/main.9fa5f7e1.css",
-    "static/js/main.124f2a9c.js"
+    "static/css/main.dc14fbe8.css",
+    "static/js/main.4738834b.js"
   ]
 }

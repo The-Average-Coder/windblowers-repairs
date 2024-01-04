@@ -20,6 +20,16 @@
   font-weight: bold;
 }
 
+.repair__jobTitle input {
+    font-size: 26px;
+    font-weight: bold;
+}
+
+.repair__jobTitle input:read-only {
+    border: none;
+    outline: none;
+}
+
 .repair__jobTitle span {
     font-size: 18px;
     font-weight: normal;
