@@ -822,13 +822,13 @@ app.get('/clear-cookie', (req, res) => {
   res.clearCookie('name').end();
 });
 
-app.use(express.static(path.join(__dirname, "build")));
+app.use(express.static(path.join(__dirname, "client", "build")));
 
 app.get('/*', (req, res) => {
-  res.sendFile(path.join(__dirname, "build", "index.html"));
+  res.sendFile(path.join(__dirname, "client", "build", "index.html"));
 });
 
-const port = /*process.env.PORT || */5000;
+const port = process.env.PORT || 3000;
 app.listen(port, () => {
   console.log('running on port', port);
 });
