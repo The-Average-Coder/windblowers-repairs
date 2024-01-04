@@ -385,7 +385,7 @@ function Repairs(props) {
     }).then((response) => {
       const newEvent = {
         id: response.data.id,
-        repairId: repair.id,
+        repair_id: repair.id,
         title: eventInfo.draggedEl.getAttribute("title"),
         color: eventInfo.draggedEl.getAttribute("data-color"),
         time: timeToAllocate,
@@ -449,7 +449,7 @@ function Repairs(props) {
   
   const calendarEventContent = (arg) => {
     let date = new Date(arg.date);
-    date.setDate(date.getDate() + 1);
+    date.setDate(date.getDate());
     date = date.toISOString().slice(0, 10);
     const events = calendarEvents.filter(event => event.start === date);
     let totalTime = 0;

@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "./static/css/main.dc14fbe8.css",
-    "main.js": "./static/js/main.4738834b.js",
+    "main.js": "./static/js/main.79d83b97.js",
     "static/media/brand.png": "./static/media/brand.37cd78b8d2081312875c.png",
     "static/media/brand-red.png": "./static/media/brand-red.67e29e6d2d2174e5d63d.png",
     "static/media/saxophoneIcon.png": "./static/media/saxophoneIcon.b95731435c3ceebebe19.png",
@@ -15,10 +15,10 @@
     "static/media/backIcon.png": "./static/media/backIcon.0dc3f625c6aee76c604c.png",
     "index.html": "./index.html",
     "main.dc14fbe8.css.map": "./static/css/main.dc14fbe8.css.map",
-    "main.4738834b.js.map": "./static/js/main.4738834b.js.map"
+    "main.79d83b97.js.map": "./static/js/main.79d83b97.js.map"
   },
   "entrypoints": [
     "static/css/main.dc14fbe8.css",
-    "static/js/main.4738834b.js"
+    "static/js/main.79d83b97.js"
   ]
 }
